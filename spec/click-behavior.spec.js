@@ -7,7 +7,7 @@ describe("ClickBehavior", function() {
       
       $element.click()
       
-      expect($element.innerHTML).toBe("Hello")
+      expect($element[0].innerHTML).toBe("Hello")
     })
   })
 
@@ -19,7 +19,7 @@ describe("ClickBehavior", function() {
       
       $element.click()
       
-      expect($element.innerHTML).toBe("String Value")
+      expect($element[0].innerHTML).toBe("String Value")
     })
   })
 })

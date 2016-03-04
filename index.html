@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <script src="lib/jquery.js"></script>
+    <script src="lib/elemental.js"></script>
+
+    <script src="src/click-behavior.js"></script>
+    <script src="src/load-behavior.js"></script>
+    <script src="src/ajax-behavior.js"></script>
+
+    <script src="src/app.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Elemental.js Tests</h1>
+      <div class="well" data-behavior="ClickBehavior" data-string-value="Set by your click!">Click Me</div>
+      <div class="well" data-behavior="LoadBehavior" data-string-value="Set on load without onLoad()"></div>
+      <div class="well" data-behavior="AjaxBehavior"></div>
+    </div>
+  </body>
+</html>

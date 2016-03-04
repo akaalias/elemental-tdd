@@ -7,7 +7,7 @@ describe("Boilerplate.LoadBehavior", function() {
 
       new Boilerplate.LoadBehavior($element)
       
-      expect($element.innerHTML).toBe("Hello")
+      expect($element[0].innerHTML).toBe("Hello")
     })
   })
 
@@ -17,7 +17,7 @@ describe("Boilerplate.LoadBehavior", function() {
 
       new Boilerplate.LoadBehavior($element)
       
-      expect($element.innerHTML).toBe("String Value")
+      expect($element[0].innerHTML).toBe("String Value")
     })
   })
 })

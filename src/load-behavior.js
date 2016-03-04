@@ -6,7 +6,7 @@ Boilerplate.LoadBehavior = function(element) {
   
   if(value !== undefined) string = value
   
-  element.innerHTML = string
+  element[0].innerHTML = string
 }
 
 Elemental.addNamespace(Boilerplate);
