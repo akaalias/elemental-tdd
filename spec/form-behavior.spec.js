@@ -1,27 +1,48 @@
 describe("Boilerplate.FormBehavior", function() {
-
+  
   var $element
-  var event
-
+  
   describe("When submitted", function() {
 
-    it("Makes an Ajax call and shows the result", function() {
-
+    beforeEach(function() {
       $element = $("<form></form>")
-
+      
       new Boilerplate.FormBehavior($element)
+    })
+    
+    describe("When Ajax call returns 200", function() {
 
-      $element.submit()
-
-      request = jasmine.Ajax.requests.mostRecent();
-
-      jasmine.Ajax.requests.mostRecent().respondWith({
-        "status": 200,
-        "contentType": 'text/plain',
-        "responseText": 'Hello'
+      it("Shows the result", function() {
+        
+        $element.submit()
+        
+        request = jasmine.Ajax.requests.mostRecent();
+        
+        jasmine.Ajax.requests.mostRecent().respondWith({
+          "status": 200,
+          "contentType": 'text/plain',
+          "responseText": 'Hello'
+        })
+        
+        expect($element[0].innerHTML).toBe("Hello")
       })
+    })
 
-      expect($element[0].innerHTML).toBe("Hello")
+    describe("When Ajax call returns anything non-200", function() {
+
+      it("Shows an error", function() {
+        
+        $element.submit()
+        
+        request = jasmine.Ajax.requests.mostRecent();
+        
+        jasmine.Ajax.requests.mostRecent().respondWith({
+          "status": 404,
+          "contentType": 'text/plain'
+        })
+        
+        expect($element[0].innerHTML).toBe("An error occured")
+      })
     })
   })
 })
