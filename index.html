@@ -10,15 +10,42 @@
     <script src="src/click-behavior.js"></script>
     <script src="src/load-behavior.js"></script>
     <script src="src/ajax-behavior.js"></script>
+    <script src="src/form-behavior.js"></script>
 
     <script src="src/app.js"></script>
   </head>
   <body>
     <div class="container">
       <h1>Elemental.js Tests</h1>
-      <div class="well" data-behavior="ClickBehavior" data-string-value="Set by your click!">Click Me</div>
+
+      <p class="alert alert-info">Make sure you serve this via http: <strong>./runServer.sh</strong></p>
+
+      <h2>Examples</h2>
+
+      <h3>LoadBehavior</h3>
+
+      <p>Behavior triggered on load</p>
+
       <div class="well" data-behavior="LoadBehavior" data-string-value="Set on load without onLoad()"></div>
+
+      <h3>AjaxBehavior</h3>
+
+      <p>Ajax call triggered on load</p>
+
       <div class="well" data-behavior="AjaxBehavior"></div>
+
+      <h3>FormBehavior</h3>
+
+      <p>Ajax call triggered on submit</p>
+
+      <form class="well" data-behavior="FormBehavior"><button class="btn btn-primary">Click</button></form>
+
+      <h3>ClickBehavior</h3>
+
+      <p>Behavior triggered on click</p>
+
+      <div class="well"><button class="btn btn-primary"data-behavior="ClickBehavior" data-string-value="Set by your click!">Click Me</button></div>
+
     </div>
   </body>
 </html>
